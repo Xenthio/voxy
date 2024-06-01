@@ -147,6 +147,8 @@ public class NvMeshFarWorldRenderer extends AbstractFarWorldRenderer<NvMeshViewp
         glBindVertexArray(AbstractFarWorldRenderer.STATIC_VAO);
         glDisable(GL_CULL_FACE);
         glEnable(GL_BLEND);
+        glEnable( GL_POLYGON_OFFSET_FILL );
+        glPolygonOffset( 1.0f, 4.0f );
 
         //TODO: maybe change this so the alpha isnt applied in the same way or something?? since atm the texture bakery uses a very hacky
         // blend equation to make it avoid double applying translucency
