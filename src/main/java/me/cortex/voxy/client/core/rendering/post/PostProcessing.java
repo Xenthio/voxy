@@ -198,6 +198,7 @@ public class PostProcessing {
         glDisable(GL_DEPTH_TEST);
         glDepthMask(true);
         glDisable( GL_POLYGON_OFFSET_FILL );
+        glDepthFunc(GL_LEQUAL);
 
         this.glStateCapture.restore();
     }
