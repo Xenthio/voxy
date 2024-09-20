@@ -197,6 +197,7 @@ public class PostProcessing {
         this.blitTexture.blit();
         glDisable(GL_DEPTH_TEST);
         glDepthMask(true);
+        glDisable( GL_POLYGON_OFFSET_FILL );
 
         this.glStateCapture.restore();
     }
