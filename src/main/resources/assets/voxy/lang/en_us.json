@@ -21,6 +21,8 @@
   "voxy.config.general.nvmesh.tooltip": "Use nvidia mesh shaders if possible to render LoDs",
   "voxy.config.general.nearz": "Near Z scale",
   "voxy.config.general.nearz.tooltip": "Scale the Near Z clipping plane",
+  "voxy.config.general.shaderAutoDisable": "Automatically disable Voxy with shaders",
+  "voxy.config.general.shaderAutoDisable.tooltip": "Automatically disable Voxy when shaders are applied.",
 
   "voxy.config.threads.ingest": "Ingest",
   "voxy.config.threads.ingest.tooltip": "How many threads voxy will use for ingesting new chunks",

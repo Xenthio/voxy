@@ -4,6 +4,7 @@ import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import me.cortex.voxy.client.core.Capabilities;
+import me.cortex.voxy.client.core.util.IrisUtil;
 import me.cortex.voxy.client.saver.ContextSelectionSystem;
 import net.fabricmc.loader.api.FabricLoader;
 import org.lwjgl.opengl.GL;
@@ -33,8 +34,13 @@ public class VoxyConfig {
     public int renderThreads = 5;
     public int nearZScale = 1;
     public boolean useMeshShaderIfPossible = true;
+    public boolean disableWhenShadersActive = false;
     public String defaultSaveConfig;
 
+    public boolean VoxyShouldBeEnabled() {
+        if (IrisUtil.irisShadersEnabled() && disableWhenShadersActive) return false;
+        return enabled;
+    }
 
     public static VoxyConfig loadOrCreate() {
         var path = getConfigPath();
