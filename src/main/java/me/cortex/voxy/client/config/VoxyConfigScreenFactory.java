@@ -110,6 +110,7 @@ public class VoxyConfigScreenFactory implements ModMenuApi {
                 .setTooltip(Text.translatable("voxy.config.general.nearz.tooltip"))
                 .setSaveConsumer(val -> config.nearZScale = val)
                 .setDefaultValue(DEFAULT.nearZScale)
+                .build());
                 
         category.addEntry(entryBuilder.startBooleanToggle(Text.translatable("voxy.config.general.shaderAutoDisable"), config.disableWhenShadersActive)
                 .setTooltip(Text.translatable("voxy.config.general.shaderAutoDisable.tooltip"))
