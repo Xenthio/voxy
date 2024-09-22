@@ -5,6 +5,8 @@ package me.cortex.voxy.client.core.rendering;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
+import me.cortex.voxy.client.config.VoxyConfig;
+import me.cortex.voxy.client.core.VoxelCore;
 import me.cortex.voxy.client.core.gl.GlBuffer;
 import me.cortex.voxy.client.core.model.ModelManager;
 import me.cortex.voxy.client.core.rendering.building.BuiltSection;
@@ -14,6 +16,7 @@ import me.cortex.voxy.common.world.other.Mapper;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
+import net.minecraft.client.render.FogShape;
 import net.minecraft.client.render.Frustum;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.registry.RegistryKeys;
@@ -126,8 +129,9 @@ public abstract class AbstractFarWorldRenderer <T extends Viewport, J extends Ab
 
         //TODO: fix this in a better way than this ungodly hacky stuff, causes clouds to dissapear
         //RenderSystem.setShaderFogColor(1f, 1f, 1f, 0f);
-        RenderSystem.setShaderFogEnd(99999999);
-        RenderSystem.setShaderFogStart(9999999);
+        //RenderSystem.setShaderFogEnd(VoxyConfig.CONFIG.renderDistance * 16);
+        //RenderSystem.setShaderFogStart((VoxyConfig.CONFIG.renderDistance * 16) * 0.8f);
+        //RenderSystem.setShaderFogShape( FogShape.CYLINDER );
     }
 
     public abstract void renderFarAwayOpaque(T viewport);
